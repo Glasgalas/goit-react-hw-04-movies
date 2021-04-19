@@ -1,0 +1,11 @@
+.button {
+  margin-top: 10px;
+  margin-left: 30px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #309cff;
+  color: white;
+}

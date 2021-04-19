@@ -1,0 +1,24 @@
+.loader {
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  top: 50%;
+  left: 50%;
+}
+
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.castItem {
+  flex-basis: calc(100% / 5 - 20px);
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.titleCast {
+  text-align: center;
+  color: white;
+}

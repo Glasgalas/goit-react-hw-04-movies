@@ -1,0 +1,44 @@
+.notFound {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../../img/1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.titleError {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btnHome {
+  position: fixed;
+  left: 10%;
+  top: 60%;
+}
+
+.btnSearch {
+  position: fixed;
+  right: 10%;
+  top: 60%;
+}
+
+.btnHome:hover,
+.btnSearch:hover {
+  background-color: #309cff;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.link:hover {
+  color: white;
+}
