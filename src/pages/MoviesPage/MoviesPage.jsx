@@ -69,7 +69,7 @@ const MoviesPage = () => {
         />
       )}
 
-      {movieList ? <MovieList movieList={movieList} /> : null}
+      {movieList && <MovieList movieList={movieList} />}
     </div>
   );
 };

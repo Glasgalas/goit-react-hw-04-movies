@@ -29,7 +29,7 @@ const HomePage = () => {
     <div>
       {error && <Error />}
 
-      {movieList ? <MovieList movieList={movieList} /> : <Error />}
+      {movieList.length && <MovieList movieList={movieList} />}
 
       {isLoading && (
         <Loader
