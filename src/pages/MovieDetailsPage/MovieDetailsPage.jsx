@@ -8,8 +8,9 @@ import MovieItemDetails from '../../components/MovieItemDetails/MovieItemDetails
 import Cast from '../../components/Cast/Cast';
 import Reviews from '../../components/Reviews/Reviews';
 import Back from '../../components/Button/Button';
+import Trailer from '../../components/Trailer/Trailer';
 
-import { searchDetailsFilmApi } from '../../api/serviceApi';
+import { searchDetailsFilmApi, searchDetailsFilm } from '../../api/serviceApi';
 
 import s from './MovieDetailsPage.module.css';
 
@@ -23,16 +24,31 @@ export default function MovieDetailsPage() {
   const history = useHistory();
 
   useEffect(() => {
-    movieIdFetch();
+    // movieIdFetch();
+    movieFetchID();
   }, []);
 
-  const movieIdFetch = () => {
+  // const movieIdFetch = () => {
+  //   const { movieId } = match.params;
+  //   setLoading(true);
+  //   searchDetailsFilmApi(movieId)
+  //     .then(result => setMovie(result))
+  //     .catch(error => setError(!error))
+  //     .finally(() => setLoading(false));
+  // };
+
+  const movieFetchID = async () => {
     const { movieId } = match.params;
     setLoading(true);
-    searchDetailsFilmApi(movieId)
-      .then(result => setMovie(result))
-      .catch(error => setError(!error))
-      .finally(() => setLoading(false));
+
+    try {
+      const result = await searchDetailsFilm(movieId);
+      setMovie(result);
+    } catch (error) {
+      setError(!error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleBack = () => {
@@ -81,12 +97,24 @@ export default function MovieDetailsPage() {
               Отзывы
             </Link>
           </li>
+          <li>
+            <Link
+              className={s.link}
+              to={{
+                pathname: `${match.url}/trailers`,
+                state: { ...location.state },
+              }}
+            >
+              Трейлеры
+            </Link>
+          </li>
         </ul>
       </div>
 
       <Switch>
         <Route exact path={`${match.path}/cast`} component={Cast} />
         <Route exact path={`${match.path}/reviews`} component={Reviews} />
+        <Route exact path={`${match.path}/trailers`} component={Trailer} />
       </Switch>
     </>
   );

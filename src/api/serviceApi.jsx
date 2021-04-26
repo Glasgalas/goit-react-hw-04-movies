@@ -28,6 +28,30 @@ export const searchDetailsFilmApi = id => {
     .then(resp => resp.data);
 };
 
+// асинхронный запрос деталей фильма
+export const searchDetailsFilm = async id => {
+  try {
+    const { data } = await axios.get(
+      `movie/${id}?api_key=${keyApi}&language=ru`,
+    );
+    return data;
+  } catch (error) {
+    console.error('errrror(((', error);
+  }
+};
+
+// запрос трейлера по id
+export const searchTrailer = async id => {
+  try {
+    const { data } = await axios.get(
+      `movie/${id}/videos?api_key=${keyApi}&language=ru`,
+    );
+    return data;
+  } catch (error) {
+    console.error('error(', error);
+  }
+};
+
 // запрос деталей сериала по id
 export const searchDetailsTVApi = id => {
   return axios

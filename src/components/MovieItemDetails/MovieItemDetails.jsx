@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import MovieGenre from '../MovieGenre/MovieGenre';
+
 import s from './MovieItemDetails.module.css';
 
 const MovieItemDetails = ({ movie }) => {
@@ -13,6 +15,7 @@ const MovieItemDetails = ({ movie }) => {
     tagline,
     vote_average,
     vote_count,
+    genres,
   } = movie;
 
   const postersUrl = 'https://image.tmdb.org/t/p/w500';
@@ -34,18 +37,20 @@ const MovieItemDetails = ({ movie }) => {
         <h1 className={s.title}>
           {title} / {original_title}
         </h1>
-        <h2>{tagline}</h2>
+        <h2 className={s.slogan}>{tagline}</h2>
         <p className={s.text}>Рейтинг: {vote_average}⭐</p>
         <p className={s.text}>Всего оценок: {vote_count} </p>
 
-        {overview && <h3>Сюжет</h3>}
+        {overview && <h3 className={s.overview}>Сюжет</h3>}
         <p className={s.text}>{overview}</p>
         <p className={s.text}>
-          Год выпуска: {release_date ? release_date.split('-')[0] : ''}
+          Год выпуска: {release_date ? release_date.split('-')[0] : '...'}
         </p>
         {budget ? (
           <p className={s.text}>Бюджет: ${budget.toLocaleString()}</p>
         ) : null}
+
+        <MovieGenre genres={genres} />
       </div>
     </div>
   );

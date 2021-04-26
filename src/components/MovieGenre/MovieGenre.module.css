@@ -1,0 +1,21 @@
+.genres {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  padding-left: 0;
+  /* justify-content: space-between; */
+}
+
+.genreItem {
+  width: auto;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+  background-color: #309cff;
+  border-radius: 6px;
+}
+
+.genreItem:not(:last-child) {
+  margin-right: 10px;
+}

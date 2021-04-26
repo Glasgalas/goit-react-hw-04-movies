@@ -15,11 +15,30 @@
 }
 
 .title {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
   color: #309cff;
   margin-top: 10px;
+  border-radius: 6px;
+  background-color: black;
+  width: auto;
 }
+
+.slogan {
+  color: #309cff;
+  margin: 0;
+  font-family: monospace;
+  /* font-style: italic; */
+}
+
 .text {
   color: white;
+}
+
+.overview {
+  color: #309cff;
 }
 
 .img {
