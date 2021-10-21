@@ -4,7 +4,7 @@ import s from './Unit.module.css';
 const Unit = ({ name, photo }) => {
   const photoUrl = 'https://image.tmdb.org/t/p/w300';
   return (
-    <div>
+    <div className={s.card}>
       <div className={s.thumb}>
         <img
           className={s.photo}

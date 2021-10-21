@@ -26,3 +26,19 @@
 .link {
   text-decoration: none;
 }
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 60px;
+  padding-left: 51px;
+  padding-right: 51px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  margin-bottom: 30px;
+  margin-right: 30px;
+}

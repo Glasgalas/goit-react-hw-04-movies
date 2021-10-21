@@ -72,3 +72,27 @@ export const searchReviewFilmApi = id => {
     .get(`movie/${id}/reviews?api_key=${keyApi}&language=en&page=1`)
     .then(resp => resp.data);
 };
+
+// запрос инфо об актере по id
+export const searchDetailsActor = async id => {
+  try {
+    const { data } = await axios.get(
+      `person/${id}?api_key=${keyApi}&language=ru`,
+    );
+    return data;
+  } catch (error) {
+    console.error('error', error);
+  }
+};
+
+// запрос фильмов с участием актера
+export const searchMoviesWithPerson = async id => {
+  try {
+    const { data } = await axios.get(
+      `person/${id}/movie_credits?api_key=${keyApi}&language=ru`,
+    );
+    return data;
+  } catch (error) {
+    console.error('error', error);
+  }
+};

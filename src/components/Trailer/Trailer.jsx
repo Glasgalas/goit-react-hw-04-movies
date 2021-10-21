@@ -33,7 +33,6 @@ const Trailer = () => {
     }
   };
 
-  console.log(trailer);
   return (
     <div>
       {error && <Error />}
@@ -45,16 +44,17 @@ const Trailer = () => {
               return (
                 <li key={id}>
                   <p className={s.trailerText}>{name}</p>
-
-                  <iframe
-                    width="854"
-                    height="480"
-                    src={`https://www.youtube.com/embed/${key}`}
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    title="video"
-                  />
+                  <div className={s.trailerBox}>
+                    <iframe
+                      width="854"
+                      height="480"
+                      src={`https://www.youtube.com/embed/${key}`}
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      title="video"
+                    />
+                  </div>
                 </li>
               );
             }

@@ -9,13 +9,12 @@
 
 .thumb {
   margin-right: 30px;
-  flex-basis: calc(100% / 4- 30px);
+  flex-basis: calc(100% / 3 - 30px);
 }
 
 .content {
   padding: 15px;
   flex-basis: calc(100% / 3 * 2);
-  min-width: 280px;
 }
 
 .title {
@@ -30,18 +29,17 @@
   width: auto;
 }
 
-.slogan {
+.bio {
   color: #309cff;
-  margin: 0;
-  font-family: monospace;
+}
+
+.alsoName {
+  display: flex;
+  flex-direction: column;
 }
 
 .text {
   color: white;
-}
-
-.overview {
-  color: #309cff;
 }
 
 .img {

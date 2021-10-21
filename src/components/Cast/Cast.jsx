@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, Link, withRouter } from 'react-router-dom';
 
 import Loader from 'react-loader-spinner';
 import Error from '../../components/Error/Error';
@@ -9,7 +9,7 @@ import { searchCastFilmApi } from '../../api/serviceApi';
 
 import s from './Cast.module.css';
 
-const Cast = () => {
+const Cast = ({ location }) => {
   const [cast, setCast] = useState({});
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -41,7 +41,15 @@ const Cast = () => {
               return (
                 <>
                   <li className={s.castItem} key={id}>
-                    <Unit name={original_name} photo={profile_path} />
+                    <Link
+                      className={s.link}
+                      to={{
+                        pathname: `/person/${id}`,
+                        state: { from: location },
+                      }}
+                    >
+                      <Unit name={original_name} photo={profile_path} />
+                    </Link>
                   </li>
                 </>
               );
@@ -63,4 +71,4 @@ const Cast = () => {
   );
 };
 
-export default Cast;
+export default withRouter(Cast);

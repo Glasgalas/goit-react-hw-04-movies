@@ -8,12 +8,12 @@ const Headerbar = () => {
       <ul className={s.nav}>
         <li>
           <Link className={s.link} exact to="/">
-            Home
+            Новинки
           </Link>
         </li>
         <li>
           <Link className={s.link} to="/movies">
-            Movies
+            Поиск
           </Link>
         </li>
       </ul>

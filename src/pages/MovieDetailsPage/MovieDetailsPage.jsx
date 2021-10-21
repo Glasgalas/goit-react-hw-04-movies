@@ -10,7 +10,7 @@ import Reviews from '../../components/Reviews/Reviews';
 import Back from '../../components/Button/Button';
 import Trailer from '../../components/Trailer/Trailer';
 
-import { searchDetailsFilmApi, searchDetailsFilm } from '../../api/serviceApi';
+import { searchDetailsFilm } from '../../api/serviceApi';
 
 import s from './MovieDetailsPage.module.css';
 
@@ -24,18 +24,8 @@ export default function MovieDetailsPage() {
   const history = useHistory();
 
   useEffect(() => {
-    // movieIdFetch();
     movieFetchID();
   }, []);
-
-  // const movieIdFetch = () => {
-  //   const { movieId } = match.params;
-  //   setLoading(true);
-  //   searchDetailsFilmApi(movieId)
-  //     .then(result => setMovie(result))
-  //     .catch(error => setError(!error))
-  //     .finally(() => setLoading(false));
-  // };
 
   const movieFetchID = async () => {
     const { movieId } = match.params;

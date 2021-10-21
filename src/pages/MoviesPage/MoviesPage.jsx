@@ -69,7 +69,7 @@ const MoviesPage = () => {
         />
       )}
 
-      {movieList.length && <MovieList movieList={movieList} />}
+      {movieList.length > 0 && <MovieList movieList={movieList} />}
     </div>
   );
 };

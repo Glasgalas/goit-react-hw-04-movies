@@ -27,12 +27,11 @@ img {
   display: flex;
   justify-content: start;
   align-items: center;
-  padding-bottom: 40px;
 }
 
 .link {
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 50px;
   color: white;
   font-size: 20px;
 }
