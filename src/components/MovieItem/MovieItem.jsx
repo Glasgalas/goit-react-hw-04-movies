@@ -25,7 +25,7 @@ const MovieItem = ({ title, poster_path, original_title }) => {
 };
 
 MovieItem.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   poster_path: PropTypes.string,
   original_title: PropTypes.string,
 };

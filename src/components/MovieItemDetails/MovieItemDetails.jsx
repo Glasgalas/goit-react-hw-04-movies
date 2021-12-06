@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import Rating from '@mui/material/Rating';
 
 import MovieGenre from '../MovieGenre/MovieGenre';
+import Company from '../Company/Company';
 
 import s from './MovieItemDetails.module.css';
 
@@ -16,6 +18,7 @@ const MovieItemDetails = ({ movie }) => {
     vote_average,
     vote_count,
     genres,
+    production_companies,
   } = movie;
 
   const postersUrl = 'https://image.tmdb.org/t/p/w500';
@@ -38,19 +41,33 @@ const MovieItemDetails = ({ movie }) => {
           {title} / {original_title}
         </h1>
         <h2 className={s.slogan}>{tagline}</h2>
-        <p className={s.text}>Рейтинг: {vote_average}⭐</p>
+        <Rating
+          className={s.rate}
+          name="half-rating"
+          value={vote_average ? vote_average : null}
+          precision={0.1}
+          max={10}
+          readOnly
+        />
+        <p className={s.text}>Рейтинг: {vote_average}</p>
         <p className={s.text}>Всего оценок: {vote_count} </p>
 
         {overview && <h3 className={s.overview}>Сюжет</h3>}
         <p className={s.text}>{overview}</p>
+        <p className={s.text}>
+          Жанр:
+          <MovieGenre genres={genres} />
+        </p>
         <p className={s.text}>
           Год выпуска: {release_date ? release_date.split('-')[0] : '...'}
         </p>
         {budget ? (
           <p className={s.text}>Бюджет: ${budget.toLocaleString()}</p>
         ) : null}
-
-        <MovieGenre genres={genres} />
+        <p className={s.text}>
+          Производство:
+          <Company companies={production_companies} />
+        </p>
       </div>
     </div>
   );
